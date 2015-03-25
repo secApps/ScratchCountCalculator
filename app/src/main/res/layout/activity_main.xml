@@ -20,13 +20,20 @@
 
 
 
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/linear2"
+            >
 
 
         <TextView
-            android:layout_width="180dp"
-            android:layout_height="180dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Total"
+            android:layout_rowWeight="1"
             android:id="@+id/textView"
             android:layout_alignTop="@+id/ScrollView01"
             android:layout_alignParentLeft="true"
@@ -34,15 +41,56 @@
             android:layout_above="@+id/gridLayout"
             android:layout_toLeftOf="@+id/ScrollView01"
             android:layout_toStartOf="@+id/ScrollView01" />
-        <ScrollView android:id="@+id/ScrollView01" android:layout_width="180dip" android:layout_height="180dip"
+
+
+
+            <TextView
+                android:layout_gravity="left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="$"
+                android:id="@+id/textView2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="55dp" />
+
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:id="@+id/linear3"
+            >
+
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ticket"
+                android:id="@+id/imageView" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Text"
+                android:id="@+id/textView5" />
+
+
+        </LinearLayout>
+
+        </LinearLayout>
+        <ScrollView android:id="@+id/ScrollView01"  android:layout_rowWeight="1" android:layout_width="180dip" android:layout_height="180dip"
             android:layout_alignParentTop="true"
 
             >
 
             <TableLayout android:id="@+id/TableLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="0">
 
-                <TableRow android:id="@+id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                    <TextView android:id="@+id/TextView01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Scroll"></TextView>
+                <TableRow android:id="@+id/TableRow01" android:layout_width="wrap_content" android:layout_gravity="end" android:layout_height="wrap_content">
+                    <TextView android:id="@+id/TextView01"  android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Scroll" android:layout_gravity="end"></TextView>
 
 
                 </TableRow>
@@ -81,6 +129,7 @@
                 android:layout_height="60dp"
                 android:text=""
                 android:id="@+id/d1"
+                android:layout_weight="1"
                 android:background="@drawable/d1"
                 />
             <Space
@@ -373,25 +422,9 @@
     </GridLayout>
 
     </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="55dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView2" />
+
+
 
 
 </RelativeLayout>
