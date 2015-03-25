@@ -2,12 +2,16 @@ package com.example.mahdi.scratchcountcalculator;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
@@ -19,6 +23,8 @@ import android.widget.Toast;
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
     TextView totall;
   int counter=0;
+    int width_1;
+    Button bsubmit,b7;
     int[] numbers=new int[500];
     int pressed,price_pressed,total=0,total_number=0,numbers_index=0;
     boolean clear_flag=false;
@@ -118,7 +124,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         b5.setOnClickListener(this);
         Button b6 =(Button)findViewById(R.id.b6);
         b6.setOnClickListener(this);
-        Button b7 =(Button)findViewById(R.id.b7);
+         b7 =(Button)findViewById(R.id.b7);
         b7.setOnClickListener(this);
         Button b8 =(Button)findViewById(R.id.b8);
         b8.setOnClickListener(this);
@@ -127,7 +133,43 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         Button bd5 =(Button)findViewById(R.id.d5);
         bd5.setOnClickListener(this);
         Button bclear =(Button)findViewById(R.id.clear);
-        bclear.setOnClickListener(this);
+        bd5.setOnClickListener(this);
+        Button breset =(Button)findViewById(R.id.reset);
+        breset.setOnClickListener(this);
+         bsubmit =(Button)findViewById(R.id.submit);
+
+        bsubmit.setOnClickListener(this);
+
+        // Gets linearlayout
+
+        final ViewTreeObserver observer= b7.getViewTreeObserver();
+
+        observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                width_1=b7.getHeight();
+                Toast.makeText(getApplicationContext(), Integer.toString(b7.getWidth()),Toast.LENGTH_LONG).show();
+                LinearLayout layout = (LinearLayout)findViewById(R.id.liner);
+                ViewGroup.LayoutParams params = layout.getLayoutParams();
+
+// Gets the layout params that will allow you to resize the layout
+                // ViewGroup.LayoutParams params = layout.getLayoutParams();
+// Changes the height and width to the specified *pixels*
+                params.width = b7.getWidth()*2+20;
+               // observer.removeGlobalOnLayoutListener(this);
+                ViewTreeObserver obs = b7.getViewTreeObserver();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    obs.removeOnGlobalLayoutListener(this);
+                } else {
+                    obs.removeGlobalOnLayoutListener(this);
+                }
+
+            }
+        });
+
+
+
+
 
 
     }
@@ -138,6 +180,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        // TODO Auto-generated method stub
+        super.onWindowFocusChanged(hasFocus);
+        bsubmit.setWidth(b7.getWidth()*2);
+
     }
 
     @Override
@@ -169,7 +218,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         TextView t = new TextView(getApplicationContext());
         // set the text to "text xx"
         t.setText(number_prssd +" @ $" + price_prssd);
-        t.setTextColor(ColorStateList.valueOf(Color.RED));
+        t.setTextColor(ColorStateList.valueOf(Color.rgb(237, 120, 31)));
         t.setTextSize(20);
 
 
