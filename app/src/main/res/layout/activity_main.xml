@@ -4,52 +4,67 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
-
-
-
-    <ScrollView android:id="@+id/ScrollView01" android:layout_width="200dip" android:layout_height="190dip"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button">
-
-        <TableLayout android:id="@+id/TableLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="0">
-
-            <TableRow android:id="@+id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                <TextView android:id="@+id/TextView01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="textfield 1-1"></TextView>
-
-
-            </TableRow>
-
-        </TableLayout>
-    </ScrollView>
-
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/button"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:orientation="horizontal"
+        android:id="@+id/linear1"
+        >
+    <GridLayout
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_alignTop="@+id/gridLayout"
+        android:id="@+id/gridLayout1"
+        android:columnCount="2"
+        android:layout_centerHorizontal="true">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+
+
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Total"
+            android:id="@+id/textView"
+            android:layout_alignTop="@+id/ScrollView01"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/gridLayout"
+            android:layout_toLeftOf="@+id/ScrollView01"
+            android:layout_toStartOf="@+id/ScrollView01" />
+        <ScrollView android:id="@+id/ScrollView01" android:layout_width="160dip" android:layout_height="190dip"
+            android:layout_alignParentTop="true"
+
+            >
+
+            <TableLayout android:id="@+id/TableLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="0">
+
+                <TableRow android:id="@+id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@+id/TextView01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Scroll"></TextView>
+
+
+                </TableRow>
+
+            </TableLayout>
+        </ScrollView>
+
+    </GridLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Total"
-        android:id="@+id/textView"
-        android:layout_alignTop="@+id/ScrollView01"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/gridLayout"
-        android:layout_toLeftOf="@+id/ScrollView01"
-        android:layout_toStartOf="@+id/ScrollView01" />
+        android:orientation="horizontal"
+        android:layout_below="@+id/linear1"
+        >
 
     <GridLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_centerHorizontal="true"
         android:columnCount="1"
-        android:layout_below="@+id/ScrollView01"
         android:id="@+id/gridLayout">
         <LinearLayout
             android:layout_width="match_parent"
@@ -218,14 +233,13 @@
                 android:layout_weight="1" />
         </LinearLayout>
     </GridLayout>
-
+    </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/textView2"
-        android:layout_alignTop="@+id/textView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="55dp" />
@@ -239,5 +253,6 @@
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>
