@@ -12,7 +12,7 @@
         >
     <GridLayout
         android:layout_width="fill_parent"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
         android:layout_alignTop="@+id/gridLayout"
         android:id="@+id/gridLayout1"
         android:columnCount="2"
@@ -23,8 +23,8 @@
 
 
         <TextView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Total"
             android:id="@+id/textView"
@@ -34,7 +34,7 @@
             android:layout_above="@+id/gridLayout"
             android:layout_toLeftOf="@+id/ScrollView01"
             android:layout_toStartOf="@+id/ScrollView01" />
-        <ScrollView android:id="@+id/ScrollView01" android:layout_width="160dip" android:layout_height="190dip"
+        <ScrollView android:id="@+id/ScrollView01" android:layout_width="180dip" android:layout_height="180dip"
             android:layout_alignParentTop="true"
 
             >
@@ -66,15 +66,13 @@
         android:layout_centerHorizontal="true"
         android:columnCount="1"
         android:id="@+id/gridLayout">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             >
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+
             <Button
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -83,9 +81,9 @@
                 android:background="@drawable/d1"
                 />
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                 />
 
             <Button
                 android:layout_width="60dp"
@@ -95,9 +93,9 @@
                 android:background="@drawable/d2"
                 />
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                 />
             <Button
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -105,9 +103,9 @@
                 android:id="@+id/d3"
                 android:background="@drawable/d3" />
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                 />
 
             <Button
                 android:layout_width="60dp"
@@ -117,16 +115,13 @@
                 android:background="@drawable/d5"
                 />
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"/>
 
 
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -138,10 +133,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             >
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -150,9 +142,9 @@
             android:background="@drawable/n7"
             />
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                 />
 
         <Button
             android:layout_width="60dp"
@@ -162,9 +154,9 @@
             android:background="@drawable/n8"
              />
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                />
             <Button
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -172,9 +164,9 @@
                 android:id="@+id/b9"
                 android:background="@drawable/n9" />
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                 />
 
         <Button
             android:layout_width="60dp"
@@ -183,10 +175,7 @@
             android:id="@+id/d10"
             android:background="@drawable/d10"
              />
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+
 
 
         </LinearLayout>
@@ -200,10 +189,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             >
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+
 
         <Button
             android:layout_width="60dp"
@@ -213,9 +199,9 @@
             android:background="@drawable/n4"
             />
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                 />
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -224,9 +210,9 @@
             android:background="@drawable/n5"
              />
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                 />
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -235,9 +221,9 @@
             android:background="@drawable/n6"
              />
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                 />
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -245,10 +231,7 @@
             android:id="@+id/d20"
             android:background="@drawable/d20"
              />
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+
 
         </LinearLayout>
         <LinearLayout
@@ -262,10 +245,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             >
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+
             <Button
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -274,9 +254,9 @@
                 android:background="@drawable/n1"
                 />
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                 />
 
             <Button
                 android:layout_width="60dp"
@@ -286,9 +266,9 @@
                 android:background="@drawable/n2"
                 />
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                 />
             <Button
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -296,9 +276,9 @@
                 android:id="@+id/b3"
                 android:background="@drawable/n3" />
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                 />
 
             <Button
                 android:layout_width="60dp"
@@ -307,10 +287,6 @@
                 android:id="@+id/d30"
                 android:background="@drawable/d30"
                 />
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
 
 
         </LinearLayout>
@@ -325,10 +301,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             >
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+
             <Button
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -337,31 +310,54 @@
                 android:background="@drawable/n0"
                 />
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                 />
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="1"
+                 >
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
             <Button
                 android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_height="30dp"
                 android:text=""
                 android:id="@+id/reset"
                 android:background="@drawable/reset"
                 />
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="35dp"
+                         />
+
             <Button
                 android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_height="30dp"
                 android:text=""
+
                 android:id="@+id/clear"
                 android:background="@drawable/clear" />
+                </LinearLayout>
+                <Button
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:text=""
+
+                   android:id="@+id/submit"
+                    android:background="@drawable/submit"
+                    />
+
+            </GridLayout>
             <Space
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                 />
 
             <Button
                 android:layout_width="60dp"
@@ -370,10 +366,6 @@
                 android:id="@+id/d50"
                 android:background="@drawable/d50"
                 />
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
 
 
         </LinearLayout>
@@ -396,9 +388,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/textView3"
-        android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2" />
 
 
 </RelativeLayout>
