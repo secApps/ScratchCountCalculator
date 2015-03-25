@@ -79,7 +79,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 pressed_number=pressed_number.concat(Integer.toString(pressed));
                 counter++;
                 break;
-            case R.id.bd5:
+            case R.id.d5:
                price_pressed=5;
                 total=total+Integer.parseInt(pressed_number)*price_pressed;
                   totall.setText(Integer.toString(total));
@@ -102,8 +102,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         totall=(TextView)findViewById(R.id.textView2);
-        Button btn =(Button)findViewById(R.id.button);
-        btn.setOnClickListener(this);
+       // Button btn =(Button)findViewById(R.id.button);
+        //btn.setOnClickListener(this);
         Button b0 =(Button)findViewById(R.id.b0);
         b0.setOnClickListener(this);
         Button b1 =(Button)findViewById(R.id.b1);
@@ -124,7 +124,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         b8.setOnClickListener(this);
         Button b9 =(Button)findViewById(R.id.b9);
         b9.setOnClickListener(this);
-        Button bd5 =(Button)findViewById(R.id.bd5);
+        Button bd5 =(Button)findViewById(R.id.d5);
         bd5.setOnClickListener(this);
         Button bclear =(Button)findViewById(R.id.clear);
         bclear.setOnClickListener(this);
