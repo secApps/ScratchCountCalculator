@@ -26,6 +26,7 @@
             android:layout_width="180dip"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:layout_gravity="start"
             android:id="@+id/linear2"
             >
 
@@ -52,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="$"
+                android:text="0"
                 android:id="@+id/textView2"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
@@ -77,25 +78,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="35dip"
-                android:textColor="@color/abc_background_cache_hint_selector_material_dark"
+
                 android:layout_gravity="center"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="num"
+                android:text="0"
                 android:id="@+id/total_num" />
 
 
         </LinearLayout>
 
+
         </LinearLayout>
         <ScrollView android:id="@+id/ScrollView01"  android:layout_rowWeight="1" android:layout_width="180dip" android:layout_height="180dip"
-            android:layout_alignParentTop="true"
+            android:layout_alignParentTop="true" android:layout_gravity="end"
 
             >
 
             <TableLayout android:id="@+id/TableLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="0">
 
                 <TableRow android:id="@+id/TableRow01" android:layout_width="wrap_content" android:layout_gravity="end" android:layout_height="wrap_content">
-                    <TextView android:id="@+id/TextView01"  android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Scroll" android:layout_gravity="end"></TextView>
+
 
 
                 </TableRow>
@@ -117,9 +119,10 @@
 
         >
 
-        <Space
-            android:layout_width="10dp"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="10dp"
+            android:background="#bdbdbd"
             />
 
         <LinearLayout
@@ -201,6 +204,7 @@
             android:layout_weight="1"
             android:id="@+id/b7"
             android:background="@drawable/n7"
+
             />
             <Space
                 android:layout_width="10dip"
@@ -316,6 +320,7 @@
                 android:layout_weight="1"
                 android:id="@+id/b1"
                 android:background="@drawable/n1"
+                android:focusableInTouchMode="true"
                 />
             <Space
                 android:layout_width="10dip"

@@ -2,9 +2,13 @@ package com.example.mahdi.scratchcountcalculator;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.LightingColorFilter;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +26,7 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
     TextView totall,tv;
+    TableLayout table;
   int counter=0;
     int width_1;
     Button bsubmit,b7;
@@ -99,9 +104,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.d1:
                 if(dollar_flag){
                price_pressed=1;
+                    total_number=total_number+Integer.parseInt(pressed_number);
                 dollar_flag=false;
                 total=total+Integer.parseInt(pressed_number)*price_pressed;
                   totall.setText(Integer.toString(total));
+                    tv.setText(Integer.toString(total_number));
                 counter=0;
                 updateTable(v,pressed_number,Integer.toString(price_pressed),true);
                 pressed_number="";}
@@ -109,9 +116,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.d2:
                 if(dollar_flag){
                 price_pressed=2;
+                    total_number=total_number+Integer.parseInt(pressed_number);
                 dollar_flag=false;
                 total=total+Integer.parseInt(pressed_number)*price_pressed;
                 totall.setText(Integer.toString(total));
+                    tv.setText(Integer.toString(total_number));
                 counter=0;
                 updateTable(v,pressed_number,Integer.toString(price_pressed),true);
                 pressed_number="";}
@@ -120,8 +129,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 if(dollar_flag){
                 price_pressed=3;
                 dollar_flag=false;
+                    total_number=total_number+Integer.parseInt(pressed_number);
                 total=total+Integer.parseInt(pressed_number)*price_pressed;
                 totall.setText(Integer.toString(total));
+                    tv.setText(Integer.toString(total_number));
                 counter=0;
                 updateTable(v,pressed_number,Integer.toString(price_pressed),true);
                 pressed_number="";}
@@ -129,9 +140,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.d5:
                 if(dollar_flag){
                 price_pressed=5;
+                    total_number=total_number+Integer.parseInt(pressed_number);
                 dollar_flag=false;
                 total=total+Integer.parseInt(pressed_number)*price_pressed;
                 totall.setText(Integer.toString(total));
+                    tv.setText(Integer.toString(total_number));
                 counter=0;
                 updateTable(v,pressed_number,Integer.toString(price_pressed),true);
                 pressed_number="";}
@@ -140,8 +153,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 if(dollar_flag){
                 price_pressed=10;
                 dollar_flag=false;
+                    total_number=total_number+Integer.parseInt(pressed_number);
                 total=total+Integer.parseInt(pressed_number)*price_pressed;
                 totall.setText(Integer.toString(total));
+                    tv.setText(Integer.toString(total_number));
                 counter=0;
                 updateTable(v,pressed_number,Integer.toString(price_pressed),true);
                 pressed_number="";}
@@ -149,9 +164,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.d20:
                 if(dollar_flag){
                 price_pressed=20;
+                    total_number=total_number+Integer.parseInt(pressed_number);
                 dollar_flag=false;
                 total=total+Integer.parseInt(pressed_number)*price_pressed;
                 totall.setText(Integer.toString(total));
+                    tv.setText(Integer.toString(total_number));
                 counter=0;
                 updateTable(v,pressed_number,Integer.toString(price_pressed),true);
                 pressed_number="";}
@@ -159,9 +176,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.d30:
                 if(dollar_flag){
                 price_pressed=30;
+                    total_number=total_number+Integer.parseInt(pressed_number);
                 dollar_flag=false;
                 total=total+Integer.parseInt(pressed_number)*price_pressed;
                 totall.setText(Integer.toString(total));
+                    tv.setText(Integer.toString(total_number));
                 counter=0;
                 updateTable(v,pressed_number,Integer.toString(price_pressed),true);
                 pressed_number="";}
@@ -169,9 +188,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.d50:
                 if(dollar_flag){
                 price_pressed=50;
+                    total_number=total_number+Integer.parseInt(pressed_number);
                 dollar_flag=false;
                 total=total+Integer.parseInt(pressed_number)*price_pressed;
                 totall.setText(Integer.toString(total));
+                    tv.setText(Integer.toString(total_number));
                 counter=0;
                 updateTable(v,pressed_number,Integer.toString(price_pressed),true);
                 pressed_number="";}
@@ -183,8 +204,17 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 updateTable(v,pressed_number,Integer.toString(price_pressed),false);
                 counter=0;}
                 break;
+            case R.id.reset:
+                // pressed=9;
+                // pressed_number=pressed_number.concat(Integer.toString(pressed));
+
+                    resetTable();
+                    counter=0;
+                break;
         }
     }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -198,6 +228,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         b0.setOnClickListener(this);
         Button b1 =(Button)findViewById(R.id.b1);
         b1.setOnClickListener(this);
+
+        //b1.getBackground().setColorFilter(new LightingColorFilter(0xFFFFFFFF, 0xFFAA0000));
         Button b2 =(Button)findViewById(R.id.b2);
         b2.setOnClickListener(this);
         Button b3 =(Button)findViewById(R.id.b3);
@@ -304,7 +336,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     public void updateTable(View v, String number_prssd, String price_prssd, boolean remove_add){
 
         // get a reference for the TableLayout
-        TableLayout table = (TableLayout) findViewById(R.id.TableLayout01);
+         table= (TableLayout) findViewById(R.id.TableLayout01);
 
         // create a new TableRow
         TableRow row = new TableRow(getApplicationContext());
@@ -315,10 +347,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         // create a new TextView
         TextView t = new TextView(getApplicationContext());
         // set the text to "text xx"
-        t.setText(number_prssd +" @ $" + price_prssd);
+        //t.setText(number_prssd +" @ $" + price_prssd);
+        t.setText(spanIt(number_prssd + " @ $" + price_prssd, "@ $"));
         t.setTextColor(ColorStateList.valueOf(Color.rgb(237, 120, 31)));
-        t.setTextSize(20);
+        t.setTextSize(25);
+        t.setTypeface(null, Typeface.BOLD);
         t.setGravity(View.TEXT_ALIGNMENT_TEXT_END);
+
 
 
 
@@ -332,7 +367,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         table.addView(row,new TableLayout.LayoutParams(RadioGroup.LayoutParams.WRAP_CONTENT, RadioGroup.LayoutParams.WRAP_CONTENT));
             numbers[numbers_index]=Integer.parseInt(number_prssd)*Integer.parseInt(price_prssd);
             numbers_pressed[numbers_index]=Integer.parseInt(number_prssd);
-            tv.setText(Integer.toString(numbers_pressed[numbers_index]++));
+
+           // tv.setText(Integer.toString(numbers_pressed[numbers_index]));
+
             numbers_index++;
 
         }
@@ -348,8 +385,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             Toast.makeText(getApplicationContext(),text.substring(0,text.lastIndexOf("@")-1) + "  "+ text.substring(text.lastIndexOf("$") + 1) ,Toast.LENGTH_SHORT).show();*/
             totall.setText(Integer.toString(Integer.parseInt(totall.getText().toString())-numbers[numbers_index-1]));
             table.removeViewAt(childCount - 1);
+                tv.setText(Integer.toString(Integer.parseInt(tv.getText().toString())-numbers_pressed[numbers_index-1]));
             numbers_index--;
-                tv.setText(Integer.toString(numbers_pressed[numbers_index]--));}
+                }
 
 
 
@@ -361,6 +399,30 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             }
 
         });
+
+    }
+    private SpannableString spanIt(String text, String queryText) {
+        // search for query on text
+        int startIndex = text.indexOf(queryText);
+        int endIndex = startIndex + queryText.length();
+        // spannable to show the search query
+        SpannableString spanText = new SpannableString(text);
+        if (startIndex > -1) {
+            spanText.setSpan(new ForegroundColorSpan(Color.BLACK), startIndex,
+                    endIndex, 0);
+        }
+        return spanText;
+    }
+    public void resetTable(){
+
+        table.removeAllViews();
+        total=0;
+        total_number=0;
+        numbers_index=0;
+        dollar_flag=false;
+        totall.setText("0");
+        tv.setText("0");
+
 
     }
 }
