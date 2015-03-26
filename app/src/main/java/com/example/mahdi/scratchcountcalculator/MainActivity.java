@@ -27,7 +27,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     Button bsubmit,b7;
     int[] numbers=new int[500];
     int pressed,price_pressed,total=0,total_number=0,numbers_index=0;
-    boolean clear_flag=false;
+    boolean dollar_flag=false;
     String pressed_number="",pressed_price,Total;
 
     @Override
@@ -35,6 +35,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.b0:
                 pressed=0;
+                dollar_flag=true;
                 pressed_number=pressed_number.concat(Integer.toString(pressed));
                 counter++;
                 //hello
@@ -42,26 +43,31 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             //OR
             case R.id.b1:
                 pressed=1;
+                dollar_flag=true;
                 counter++;
                 pressed_number=pressed_number.concat(Integer.toString(pressed));
                 break;
             case R.id.b2:
                 pressed=2;
+                dollar_flag=true;
                 pressed_number=pressed_number.concat(Integer.toString(pressed));
                 counter++;
                 break;
             case R.id.b3:
                 pressed=3;
+                dollar_flag=true;
                 pressed_number=pressed_number.concat(Integer.toString(pressed));
                 counter++;
                 break;
             case R.id.b4:
                 pressed=4;
+                dollar_flag=true;
                 pressed_number=pressed_number.concat(Integer.toString(pressed));
                 counter++;
                 break;
             case R.id.b5:
                 pressed=5;
+                dollar_flag=true;
                 pressed_number=pressed_number.concat(Integer.toString(pressed));
                 counter++;
                 break;
@@ -72,26 +78,101 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.b7:
                 pressed=7;
+                dollar_flag=true;
                 pressed_number=pressed_number.concat(Integer.toString(pressed));
                 counter++;
                 break;
             case R.id.b8:
                 pressed=8;
+                dollar_flag=true;
                 pressed_number=pressed_number.concat(Integer.toString(pressed));
                 counter++;
                 break;
             case R.id.b9:
                 pressed=9;
+                dollar_flag=true;
                 pressed_number=pressed_number.concat(Integer.toString(pressed));
                 counter++;
                 break;
-            case R.id.d5:
-               price_pressed=5;
+            case R.id.d1:
+                if(dollar_flag){
+               price_pressed=1;
+                dollar_flag=false;
                 total=total+Integer.parseInt(pressed_number)*price_pressed;
                   totall.setText(Integer.toString(total));
                 counter=0;
                 updateTable(v,pressed_number,Integer.toString(price_pressed),true);
-                pressed_number="";
+                pressed_number="";}
+                break;
+            case R.id.d2:
+                if(dollar_flag){
+                price_pressed=2;
+                dollar_flag=false;
+                total=total+Integer.parseInt(pressed_number)*price_pressed;
+                totall.setText(Integer.toString(total));
+                counter=0;
+                updateTable(v,pressed_number,Integer.toString(price_pressed),true);
+                pressed_number="";}
+                break;
+            case R.id.d3:
+                if(dollar_flag){
+                price_pressed=3;
+                dollar_flag=false;
+                total=total+Integer.parseInt(pressed_number)*price_pressed;
+                totall.setText(Integer.toString(total));
+                counter=0;
+                updateTable(v,pressed_number,Integer.toString(price_pressed),true);
+                pressed_number="";}
+                break;
+            case R.id.d5:
+                if(dollar_flag){
+                price_pressed=5;
+                dollar_flag=false;
+                total=total+Integer.parseInt(pressed_number)*price_pressed;
+                totall.setText(Integer.toString(total));
+                counter=0;
+                updateTable(v,pressed_number,Integer.toString(price_pressed),true);
+                pressed_number="";}
+                break;
+            case R.id.d10:
+                if(dollar_flag){
+                price_pressed=10;
+                dollar_flag=false;
+                total=total+Integer.parseInt(pressed_number)*price_pressed;
+                totall.setText(Integer.toString(total));
+                counter=0;
+                updateTable(v,pressed_number,Integer.toString(price_pressed),true);
+                pressed_number="";}
+                break;
+            case R.id.d20:
+                if(dollar_flag){
+                price_pressed=20;
+                dollar_flag=false;
+                total=total+Integer.parseInt(pressed_number)*price_pressed;
+                totall.setText(Integer.toString(total));
+                counter=0;
+                updateTable(v,pressed_number,Integer.toString(price_pressed),true);
+                pressed_number="";}
+                break;
+            case R.id.d30:
+                if(dollar_flag){
+                price_pressed=30;
+                dollar_flag=false;
+                total=total+Integer.parseInt(pressed_number)*price_pressed;
+                totall.setText(Integer.toString(total));
+                counter=0;
+                updateTable(v,pressed_number,Integer.toString(price_pressed),true);
+                pressed_number="";}
+                break;
+            case R.id.d50:
+                if(dollar_flag){
+                price_pressed=50;
+                dollar_flag=false;
+                total=total+Integer.parseInt(pressed_number)*price_pressed;
+                totall.setText(Integer.toString(total));
+                counter=0;
+                updateTable(v,pressed_number,Integer.toString(price_pressed),true);
+                pressed_number="";}
                 break;
             case R.id.clear:
                // pressed=9;
@@ -130,10 +211,24 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         b8.setOnClickListener(this);
         Button b9 =(Button)findViewById(R.id.b9);
         b9.setOnClickListener(this);
-        Button bd5 =(Button)findViewById(R.id.d5);
+        Button bd1=(Button)findViewById(R.id.d1);
+        bd1.setOnClickListener(this);
+        Button bd2=(Button)findViewById(R.id.d2);
+        bd2.setOnClickListener(this);
+        Button bd3=(Button)findViewById(R.id.d3);
+        bd3.setOnClickListener(this);
+        Button bd5=(Button)findViewById(R.id.d5);
         bd5.setOnClickListener(this);
+        Button bd10=(Button)findViewById(R.id.d10);
+        bd10.setOnClickListener(this);
+        Button bd20=(Button)findViewById(R.id.d20);
+        bd20.setOnClickListener(this);
+        Button bd30=(Button)findViewById(R.id.d30);
+        bd30.setOnClickListener(this);
+        Button bd50 =(Button)findViewById(R.id.d50);
+        bd50.setOnClickListener(this);
         Button bclear =(Button)findViewById(R.id.clear);
-        bd5.setOnClickListener(this);
+        bclear.setOnClickListener(this);
         Button breset =(Button)findViewById(R.id.reset);
         breset.setOnClickListener(this);
          bsubmit =(Button)findViewById(R.id.submit);
