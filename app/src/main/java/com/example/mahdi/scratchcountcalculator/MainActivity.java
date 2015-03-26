@@ -21,12 +21,13 @@ import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
-    TextView totall;
+    TextView totall,tv;
   int counter=0;
     int width_1;
     Button bsubmit,b7;
     int[] numbers=new int[500];
-    int pressed,price_pressed,total=0,total_number=0,numbers_index=0;
+    int[] numbers_pressed=new int[500];
+    int pressed,price_pressed,total=0,total_number=0,numbers_index=0,numbers_pressed_index=0;
     boolean dollar_flag=false;
     String pressed_number="",pressed_price,Total;
 
@@ -73,6 +74,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.b6:
                 pressed=6;
+                dollar_flag=true;
                 pressed_number=pressed_number.concat(Integer.toString(pressed));
                 counter++;
                 break;
@@ -191,6 +193,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         totall=(TextView)findViewById(R.id.textView2);
        // Button btn =(Button)findViewById(R.id.button);
         //btn.setOnClickListener(this);
+        tv=(TextView)findViewById(R.id.total_num);
         Button b0 =(Button)findViewById(R.id.b0);
         b0.setOnClickListener(this);
         Button b1 =(Button)findViewById(R.id.b1);
@@ -315,6 +318,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         t.setText(number_prssd +" @ $" + price_prssd);
         t.setTextColor(ColorStateList.valueOf(Color.rgb(237, 120, 31)));
         t.setTextSize(20);
+        t.setGravity(View.TEXT_ALIGNMENT_TEXT_END);
 
 
 
@@ -327,6 +331,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         // add the TableRow to the TableLayout
         table.addView(row,new TableLayout.LayoutParams(RadioGroup.LayoutParams.WRAP_CONTENT, RadioGroup.LayoutParams.WRAP_CONTENT));
             numbers[numbers_index]=Integer.parseInt(number_prssd)*Integer.parseInt(price_prssd);
+            numbers_pressed[numbers_index]=Integer.parseInt(number_prssd);
+            tv.setText(Integer.toString(numbers_pressed[numbers_index]++));
             numbers_index++;
 
         }
@@ -342,7 +348,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             Toast.makeText(getApplicationContext(),text.substring(0,text.lastIndexOf("@")-1) + "  "+ text.substring(text.lastIndexOf("$") + 1) ,Toast.LENGTH_SHORT).show();*/
             totall.setText(Integer.toString(Integer.parseInt(totall.getText().toString())-numbers[numbers_index-1]));
             table.removeViewAt(childCount - 1);
-            numbers_index--;}
+            numbers_index--;
+                tv.setText(Integer.toString(numbers_pressed[numbers_index]--));}
 
 
 
